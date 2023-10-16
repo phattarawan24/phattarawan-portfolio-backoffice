@@ -12,7 +12,7 @@
                             <h5 class="mb-0">Create Profile</h5>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('profile.store') }}" method="POST">
+                            <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                     <label class="form-label" for="basic-default-first_name">First Name</label>
@@ -64,6 +64,38 @@
                                         class="form-control @error('birthday') is-invalid @enderror" name="birthday"
                                         value="{{ old('birthday') }}" placeholder="Birthday">
                                     @error('birthday')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="basic-default-degree">Degree</label>
+                                    <input id="basic-default-degree"
+                                        class="form-control @error('degree') is-invalid @enderror" name="degree"
+                                        value="{{ old('degree') }}" placeholder="Degree">
+                                    @error('degree')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="basic-default-experience">Experience</label>
+                                    <input id="basic-default-experience"
+                                        class="form-control @error('experience') is-invalid @enderror" name="experience"
+                                        value="{{ old('experience') }}" placeholder="Experience">
+                                    @error('experience')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="img" class="form-label">Img</label>
+                                    <input class="form-control @error('img') is-invalid @enderror" type="file"
+                                        id="img" name="img" accept="image/png, image/gif, image/jpeg" />
+                                    @error('img')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

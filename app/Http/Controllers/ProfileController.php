@@ -38,8 +38,11 @@ class ProfileController extends Controller
         $profile->phone	= $request->input('phone');
         $profile->email	= $request->input('email');
         $profile->birthday = $request->input('birthday');
+        $image = "data:image/png;base64,".base64_encode(file_get_contents($request->file('img')->path()));
+        $profile->img = $image;
+        $profile->degree = $request->input('degree');
+        $profile->experience = $request->input('experience');
         $profile->save();
-        // return view('profile', ['status' => 'success' ]);
         return redirect()->route('profile')->with([ 'status_db' => 'success' ]);
     }
 

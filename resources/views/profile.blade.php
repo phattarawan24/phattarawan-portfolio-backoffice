@@ -23,6 +23,8 @@
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Birthday</th>
+                                <th>Degree</th>
+                                <th>Experience</th>
                                 <th></th>
 
                             </tr>
@@ -43,6 +45,12 @@
                                     <td>
                                         {{ $value->birthday }}
                                     </td>
+                                    <th>
+                                        {{ $value->degree }}
+                                    </th>
+                                    <th>
+                                        {{ $value->experience }}
+                                    </th>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

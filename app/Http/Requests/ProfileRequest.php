@@ -27,6 +27,9 @@ class ProfileRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|numeric',
             'birthday' => 'required',
+            'img' => 'required|image|mimes:jpeg,jpg,png,gif',
+            'degree' => 'required',
+            'experience' => 'required|numeric',
         ];
     }
 }
