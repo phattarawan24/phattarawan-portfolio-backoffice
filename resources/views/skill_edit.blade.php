@@ -37,6 +37,17 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="basic-default-type">Type</label>
+                                    <input type="text" class="form-control  @error('type') is-invalid @enderror"
+                                        name="type" value="{{ old('type', $data->type) }}" id="basic-default-type"
+                                        placeholder="Type" />
+                                    @error('type')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </form>
                         </div>
