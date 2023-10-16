@@ -35,6 +35,7 @@ class SkillController extends Controller
         $skill->level = $request->input('level');
         $skill->created = date('Y-m-d H:i:s');
         $skill->updated = date('Y-m-d H:i:s');
+        $skill->type = $request->input('type');
         $skill->save();
         return redirect()->route('skill')->with([ 'status_db' => 'success' ]);
     }
@@ -64,6 +65,7 @@ class SkillController extends Controller
         $skill = Skill::find($id);
         $skill->title = $request->input('title');
         $skill->level = $request->input('level');
+        $skill->type = $request->input('type');
         $skill->updated = date('Y-m-d H:i:s');
         $skill->save();
         return redirect()->route('skill')->with([ 'status_db' => 'success' ]);

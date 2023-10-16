@@ -38,15 +38,20 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="basic-default-type">Type</label>
-                                    <input type="text" class="form-control  @error('type') is-invalid @enderror"
-                                        name="type" value="{{ old('type', $data->type) }}" id="basic-default-type"
-                                        placeholder="Type" />
+                                    <label for="skill-type" class="form-type">Type</label>
+                                    <select  class="form-control  @error('type') is-invalid @enderror"
+                                        name="type" id="skill-type">
+                                        <option {{($data->type == 0) ? 'selected':''}} value="0">frontend</option>
+                                        <option {{($data->type == 1) ? 'selected':''}} value="1">backend</option>
+                                    </select>
                                     @error('type')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+
+
+
                                 </div>
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </form>

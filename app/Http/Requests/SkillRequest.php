@@ -24,6 +24,7 @@ class SkillRequest extends FormRequest
         return [
             'title' => 'required',
             'level' => 'required|numeric',
+            'type' => 'required'
             // 'created' => 'timestamp',
         ];
     }

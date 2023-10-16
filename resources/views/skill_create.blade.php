@@ -38,9 +38,12 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="basic-default-type">Type</label>
-                                    <input type="text" class="form-control  @error('type') is-invalid @enderror"
-                                        name="type" value="{{ old('type') }}"
-                                        placeholder="Type" />
+                                    <select  class="form-control  @error('type') is-invalid @enderror"
+                                        name="type"
+                                        placeholder="Type" >
+                                    <option value="0">frontend</option>
+                                    <option value="1">backend</option>
+                                </select>
                                     @error('type')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
